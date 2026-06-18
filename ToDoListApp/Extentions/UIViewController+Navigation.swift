@@ -15,9 +15,13 @@ extension UIViewController{
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
-        
-        navigationController?.navigationBar.tintColor = tintColor
-        
+                
         navigationController?.navigationBar.prefersLargeTitles = prefersLargeTitles
+    }
+
+    func setRightBarCloseButton(target: Any?, action: Selector) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
+                                                            target: target,
+                                                            action: action)
     }
 }

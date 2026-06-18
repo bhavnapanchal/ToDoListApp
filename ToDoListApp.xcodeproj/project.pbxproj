@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E5935C3A2FD2FC070058805F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E5935C392FD2FBFF0058805F /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E5BFCC872F6BE07900048451 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5935C392FD2FBFF0058805F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E5BFCC6C2F6BE07700048451 /* ToDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BFCC862F6BE07900048451 /* ToDoListAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BFCC902F6BE07900048451 /* ToDoListAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +45,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		E53DE3042FE3C42400A21327 /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		E5BFCC6E2F6BE07700048451 /* ToDoListApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -88,6 +98,8 @@
 		E5BFCC632F6BE07700048451 = {
 			isa = PBXGroup;
 			children = (
+				E53DE3042FE3C42400A21327 /* Screenshots */,
+				E5935C392FD2FBFF0058805F /* README.md */,
 				E5BFCC6E2F6BE07700048451 /* ToDoListApp */,
 				E5BFCC892F6BE07900048451 /* ToDoListAppTests */,
 				E5BFCC932F6BE07900048451 /* ToDoListAppUITests */,
@@ -121,6 +133,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				E53DE3042FE3C42400A21327 /* Screenshots */,
 				E5BFCC6E2F6BE07700048451 /* ToDoListApp */,
 			);
 			name = ToDoListApp;
@@ -225,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5935C3A2FD2FC070058805F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

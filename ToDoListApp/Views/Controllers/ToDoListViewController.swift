@@ -205,6 +205,23 @@ class ToDoListViewController: UIViewController {
         }
     }
     
+    //MARK: - Open Detail Task View
+    
+    func openDetailTaskVC(task: ToDoListModel) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailTaskVC = storyboard.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
+        detailTaskVC.task = task
+//        navigationController?.pushViewController(detailTaskVC, animated: true)
+        
+        let navVC = UINavigationController(rootViewController: detailTaskVC)
+        navVC.modalPresentationStyle = .pageSheet
+        
+        if let sheet = navVC.sheetPresentationController{
+            sheet.detents = [.large()]
+        }
+        navVC.isModalInPresentation = true
+        present(navVC, animated: true)
+    }
     //MARK: -
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -247,13 +264,15 @@ extension ToDoListViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = noOfSections[indexPath.section]
-        let task = toDoListArray[section]?[indexPath.row]
-        openCreateVC(isUpdate: true, task: task)
+        guard let task = toDoListArray[section]?[indexPath.row] else { return }
+//        openCreateVC(isUpdate: true, task: task)
+        
+        openDetailTaskVC(task: task)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let delete = UIContextualAction(style: .destructive, title: "Delete") {[weak self] _, _, completion in
+        let delete = UIContextualAction(style: .destructive, title: nil) {[weak self] _, _, completion in
             guard let self = self else {return}
             let section = self.noOfSections[indexPath.section]
             if let task = self.toDoListArray[section]?[indexPath.row]
@@ -272,7 +291,23 @@ extension ToDoListViewController: UITableViewDelegate{
                 }
             }
         }
-        return UISwipeActionsConfiguration(actions: [delete])
+        delete.backgroundColor = UIColor(named: "listColor")
+        delete.image = UIImage(systemName: "trash")
+
+        
+        
+        let edit = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
+            guard let self = self else {return}
+            let section = self.noOfSections[indexPath.section]
+            if let task = self.toDoListArray[section]?[indexPath.row]
+            {
+                self.openCreateVC(isUpdate: true, task: task)
+            }
+            completion(true)
+        }
+        edit.backgroundColor = UIColor(named: "HeaderViewBGColor")
+        edit.image = UIImage(systemName: "pencil")
+        return UISwipeActionsConfiguration(actions: [delete, edit])
     }
 }
 

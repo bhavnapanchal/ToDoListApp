@@ -18,18 +18,18 @@ struct NavigationBarStyle {
         
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 34) ?? UIFont.systemFont(ofSize: 34), .foregroundColor: UIColor(named: "ListColor") ?? .white]
         
-        return (appearance, .black, true)
+        return (appearance, UIColor(named: "ListColor") ?? .white, true)
     }
     
     static func popUpStyle() -> (appearance : UINavigationBarAppearance, tintColor: UIColor, large: Bool){
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = UIColor(named: "ListColor")
         
-        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25) ?? UIFont.systemFont(ofSize: 25), .foregroundColor: UIColor(named: "PrimaryColor") ?? .black]
+        appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 25) ?? UIFont.systemFont(ofSize: 25), .foregroundColor: UIColor(named: "PrimaryColor") ?? .white]
         
-        appearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Helvetica​Neue​-​Medium", size: 34) ?? UIFont.systemFont(ofSize: 34), .foregroundColor: UIColor(named: "PrimaryColor") ?? .black]
+        appearance.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Helvetica​Neue​-​Medium", size: 34) ?? UIFont.systemFont(ofSize: 34), .foregroundColor: UIColor(named: "PrimaryColor") ?? .white]
         
-        return (appearance, .black, false)
+        return (appearance, UIColor(named: "PrimaryColor") ?? .white, false)
     }
 }
 

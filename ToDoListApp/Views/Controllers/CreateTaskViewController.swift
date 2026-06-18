@@ -26,7 +26,8 @@ class CreateTaskViewController: UIViewController {
         super.viewDidLoad()
 
         
-        setRightBarButton()
+        setRightBarCloseButton(target: self, action: #selector(didTapCloseButton))
+
         setupBindings()
         setupUI()
     }
@@ -89,11 +90,7 @@ class CreateTaskViewController: UIViewController {
             self?.createtaskViewModel.reminderTime = time
         }
     }
-    
-    func setRightBarButton(){
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapCloseButton))
-    }
-    
+
     @objc func didTapCloseButton(){
         dismiss(animated: true)
     }
