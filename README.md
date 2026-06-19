@@ -82,11 +82,12 @@ Contains reusable UI styling
 
 ## Screenshots:
 
-- ![Home](Screenshots/TaskList.png)
-- ![Add Task](Screenshots/CreateNewTask.png)
-- ![Task Filter](Screenshots/TaskFilterByCategories.png)
-- ![Edit Task](Screenshots/UpdateTask.png)
-- ![Task Detail](Screenshots/ViewTaskDetail.png)
-- ![Edit/Delete Task on Swipe](Screenshots/Edit_DeleteTask.png)
-- ![Filtered Task](Screenshots/FilteredUpcomingTasks.png)
-
+<p float="left">
+    <img scr="Screenshots/TaskList.png" width="250"/>
+    <img scr="Screenshots/CreateNewTask.png" width="250"/>
+    <img scr="Screenshots/TaskFilterByCategories.png" width="250"/>
+    <img scr="Screenshots/UpdateTask.png" width="250"/>
+    <img scr="Screenshots/ViewTaskDetail.png" width="250"/>
+    <img scr="Screenshots/Edit_DeleteTask.png" width="250"/>
+    <img scr="Screenshots/FilteredUpcomingTasks.png" width="250"/>
+</p>
