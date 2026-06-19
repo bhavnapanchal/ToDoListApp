@@ -83,11 +83,11 @@ Contains reusable UI styling
 ## Screenshots:
 
 <p float="left">
-    <img scr="Screenshots/TaskList.png" width="250"/>
-    <img scr="Screenshots/CreateNewTask.png" width="250"/>
-    <img scr="Screenshots/TaskFilterByCategories.png" width="250"/>
-    <img scr="Screenshots/UpdateTask.png" width="250"/>
-    <img scr="Screenshots/ViewTaskDetail.png" width="250"/>
-    <img scr="Screenshots/Edit_DeleteTask.png" width="250"/>
-    <img scr="Screenshots/FilteredUpcomingTasks.png" width="250"/>
+    <img src="Screenshots/TaskList.png" width="250"/>
+    <img src="Screenshots/CreateNewTask.png" width="250"/>
+    <img src="Screenshots/TaskFilterByCategories.png" width="250"/>
+    <img src="Screenshots/UpdateTask.png" width="250"/>
+    <img src="Screenshots/ViewTaskDetail.png" width="250"/>
+    <img src="Screenshots/Edit_DeleteTask.png" width="250"/>
+    <img src="Screenshots/FilteredUpcomingTasks.png" width="250"/>
 </p>
