@@ -11,6 +11,7 @@ class TaskDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView : UITableView!
     var task : ToDoListModel?
+    var onUpdateTask : ((ToDoListModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,8 @@ extension TaskDetailViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = TaskDetailViewCellType.allCases[indexPath.row].rawValue
+        let cellType = TaskDetailViewCellType.allCases[indexPath.row]
+        let cellIdentifier = cellType.rawValue
        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
                                                        for: indexPath) as? TaskDetailViewCell
@@ -68,6 +70,16 @@ extension TaskDetailViewController : UITableViewDataSource {
         
         if let task = task {
             cell.setData(task: task)
+
+            if cellType == .action {
+                cell.configureActionButtons()
+                
+                cell.onEditTapped = { [weak self] in
+                    guard let self = self else { return }
+                    self.dismiss(animated: true)
+                    self.onUpdateTask?(task)
+                }
+            }
         }
 
         return cell

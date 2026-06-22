@@ -557,6 +557,10 @@
                                                 <constraint firstItem="ff6-wO-xfu" firstAttribute="top" secondItem="lIZ-jf-A8j" secondAttribute="top" id="cqk-Lm-dO8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="Mgr-RJ-bHu" id="suW-lS-VJN"/>
+                                            <outlet property="editButton" destination="cdF-37-aXw" id="1hH-GP-g7i"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>

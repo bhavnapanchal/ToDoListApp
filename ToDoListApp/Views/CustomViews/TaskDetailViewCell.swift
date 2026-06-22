@@ -25,11 +25,20 @@ class TaskDetailViewCell: UITableViewCell {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     
+    var onEditTapped: (() -> Void)?
+    var onDeleteTapped: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func configureActionButtons() {
+        editButton.addAction(UIAction{[weak self] _ in
+            self?.onEditTapped?()
+        }, for: .touchUpInside)
+    }
+    
     func setData(task: ToDoListModel) {
         titleLabel?.text = task.title
         descriptionLabel?.text = task.toDoDescription
@@ -42,5 +51,4 @@ class TaskDetailViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

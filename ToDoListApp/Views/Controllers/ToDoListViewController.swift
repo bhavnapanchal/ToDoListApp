@@ -206,12 +206,14 @@ class ToDoListViewController: UIViewController {
     }
     
     //MARK: - Open Detail Task View
-    
     func openDetailTaskVC(task: ToDoListModel) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailTaskVC = storyboard.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
         detailTaskVC.task = task
-//        navigationController?.pushViewController(detailTaskVC, animated: true)
+        detailTaskVC.onUpdateTask = { [weak self] task in
+            guard let self = self else { return }
+            self.openCreateVC(isUpdate: true, task: task)
+        }
         
         let navVC = UINavigationController(rootViewController: detailTaskVC)
         navVC.modalPresentationStyle = .pageSheet
@@ -291,7 +293,7 @@ extension ToDoListViewController: UITableViewDelegate{
                 }
             }
         }
-        delete.backgroundColor = UIColor(named: "listColor")
+        delete.backgroundColor = UIColor(named: "HeaderViewBGColor")
         delete.image = UIImage(systemName: "trash")
 
         

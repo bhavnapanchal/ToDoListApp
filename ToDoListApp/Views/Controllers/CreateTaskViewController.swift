@@ -24,8 +24,6 @@ class CreateTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         setRightBarCloseButton(target: self, action: #selector(didTapCloseButton))
 
         setupBindings()
