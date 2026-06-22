@@ -9,9 +9,13 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
 
+    private let titleCellHeight: CGFloat = 80
+    private let actionCellHeight: CGFloat = 100
+    
     @IBOutlet weak var tableView : UITableView!
     var task : ToDoListModel?
     var onUpdateTask : ((ToDoListModel) -> Void)?
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +45,13 @@ extension TaskDetailViewController : UITableViewDelegate {
         var height = UITableView.automaticDimension
         switch cellType {
         case .title:
-            height = 80
+            height = titleCellHeight
         case .dueDate:
             height = task?.dueDate == nil ? 0 : UITableView.automaticDimension
         case .reminderTime:
             height = task?.reminderTime == nil ? 0 : UITableView.automaticDimension
         case .action:
-            height = 100
+            height = actionCellHeight
         default:
             height = UITableView.automaticDimension
         }
